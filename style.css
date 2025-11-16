@@ -18,8 +18,24 @@ section {
     background-color: #fcf7fb;
 }
 
+.click {
+    transition: all 300ms ease;
+}
+
+.click:hover {
+    transform: scale(1.1)
+}
+
+.click:active {
+    transform: scale(0.8);
+}
+
 a {
      text-decoration: none;
+}
+
+button {
+    cursor: pointer;
 }
 .title {
     font-size: 120px;
@@ -41,12 +57,13 @@ a {
 }
 
 .header {
-    position: absolute;
+    position: absolute; /* use 50% and -50% */
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 100%;
     max-width: 1000px; /*to make it responsive */
+    padding: 0 30px; /* on the sides */
 }
 
 .header__para {
@@ -74,6 +91,52 @@ a {
     border-radius: 50%;
 }
 
+.mail__btn {
+    width: 70px;
+    height: 70px;
+    font-size: 32px;
+    border-radius: 50%;
+    background-color: #242424;
+    color: white;
+    position: absolute;
+    bottom: 32px;
+    right: 40px;
+}
+
+.scroll {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.scroll__icon {
+    width: 20px;
+    height: 30px;
+    border: 2px solid #242424;
+    border-radius: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.scroll__icon:after {
+    content: "";
+    width: 4px;
+    height: 6px;
+    background-color: #242424;
+    border-radius: 2px;
+    animation: scroll 1000ms infinite alternate-reverse;
+}
+
+@keyframes scroll {
+    0%{ 
+        transform: translateY(3px);
+}
+    100% {
+        transform: translateY(-3px);
+    }
+}
 
 /* NAVIGATION */
 
@@ -84,6 +147,7 @@ nav {
     align-items: 100%;
     max-width: 1200px;
     margin: 0 auto;
+    padding: 0 20px;
     height: 100px;
 }
 #personal-logo {
