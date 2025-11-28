@@ -31,6 +31,7 @@ input, textarea {
     border-left: none;
     border-right: none;
     height: 40px;
+    transition: all 300ms ease;
 }
 
 textarea {
@@ -41,6 +42,12 @@ textarea {
 label {
     font-size: 14px;
     font-weight: bold;
+}
+input:hover, textarea:hover {
+    border-color: #dcdfe6;
+}
+input:focus, textarea:focus {
+    border-color: #f06449;
 }
 .container {
     padding: 50px 0;
@@ -101,9 +108,7 @@ img {
     color: #6823c1;
     font-weight: bold;
 }
-h4 {
-    color: #242424;
-}
+
 
 /* ANIMATION */
 
@@ -275,6 +280,7 @@ nav {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    position: relative;
 }
 .modal__about {
     background-color:white;
@@ -348,10 +354,68 @@ nav {
     width: 100%;
     max-width: 240px;
     transition: all 300ms ease;
+    border-radius: 20px;
 }
 .form__submit:hover {
+    border-color: #ffff;
     background-color: transparent;
+}
+
+.form__submit:active {
+    border-color: #f06449;
     color: #f06449;
+}
+
+.modal__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: -1; /* To hide the spinner */
+}
+
+.modal__overlay--loading {
+    background-color: #242424;
+    font-size: 80px;
+}
+
+.modal__overlay--success {
+    background-color: #4bb543;
+    font-size: 40px;
+    font-weight: 700;
+    text-align: center;
+    padding: 28px;
+}
+
+.modal__overlay--visible {
+    z-index: 10; /* To show the spinner */
+    animation: fadeIn 300ms ease;
+}
+
+.fa-spinner {
+    animation: spinner 800ms infinite linear;
+}
+@keyframes spinner {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+.modal__exit {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    font-size: 24px;
+    color: #fff;
+    font-size: 36px;
+    z-index: 100;
+    cursor: pointer;
 }
     
 /* PROJECTS */
