@@ -19,3 +19,13 @@ emailjs
         alert("The email service is temporarily unavailable, please contact me at freitasdiana@gmail.com");
     }) 
 }
+
+//toggle modal
+let isModalOpen = false;
+function toggleModal() {
+    if (isModalOpen) {
+        isModalOpen = false;    
+        return document.body.classList.remove("modal--open");
+    }
+    isModalOpen = true;
+    document.body.classList += " modal--open";}
