@@ -147,6 +147,7 @@ nav,
 .dark-theme .section__sub-title,
 .dark-theme .nav__link--anchor,
 .dark-theme .fa-adjust,
+.dark-theme .btn__menu,
 .dark-theme .header__para
 {
     color: #fdfdfd;
@@ -291,6 +292,14 @@ nav {
 }
 .fa-adjust {
     font-size: 20px;
+    cursor: pointer;
+}
+.btn__menu {
+    display: none;
+    background-color: transparent;
+    border: none;
+    font-size: 24px;
+    color: #2a045b;
     cursor: pointer;
 }
 
@@ -672,6 +681,21 @@ footer{
     }
     .nav__link--list {
         display: none;  /* To hide the nav links */
+    }
+    .btn__menu {
+        display: block;  /* To show the hamburger icon */
+    }
+    .nav__link--list--open {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: absolute;
+        top: 100px;
+        left: 0;
+        width: 100%;
+        padding: 16px 0;
+        background-color: #fdfdfd;
+        z-index: 50;
     }
     .project__description--title {
         left: 0;  /* To reduce the font when squezing the screen */

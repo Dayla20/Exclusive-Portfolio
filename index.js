@@ -14,6 +14,11 @@ function moveBackground(event) {
     }
 }   
 
+function toggleMenu() {
+    const navList = document.querySelector(".nav__link--list");
+    navList.classList.toggle("nav__link--list--open");
+}
+
 function toggleContrast() {
     contrastToggle = !contrastToggle;
     if (contrastToggle) {
