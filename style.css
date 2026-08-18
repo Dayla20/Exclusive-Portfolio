@@ -303,6 +303,47 @@ nav {
     cursor: pointer;
 }
 
+/* MOBILE MENU (full-screen overlay, shown when hamburger is tapped) */
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #2a045b;
+    z-index: 200;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 300ms ease;
+}
+.menu--open .mobile-menu {
+    opacity: 1;
+    visibility: visible;
+}
+.mobile-menu__links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+}
+.mobile-menu__link {
+    font-size: 32px;
+    color: #fdfdfd;
+    font-weight: 700;
+    text-decoration: none;
+}
+.btn__menu--close {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    color: #fdfdfd;
+    font-size: 28px;
+}
+
 
 /* MODAL */
 .modal {
@@ -684,18 +725,6 @@ footer{
     }
     .btn__menu {
         display: block;  /* To show the hamburger icon */
-    }
-    .nav__link--list--open {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        position: absolute;
-        top: 100px;
-        left: 0;
-        width: 100%;
-        padding: 16px 0;
-        background-color: #fdfdfd;
-        z-index: 50;
     }
     .project__description--title {
         left: 0;  /* To reduce the font when squezing the screen */

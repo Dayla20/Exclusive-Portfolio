@@ -64,6 +64,27 @@
           <i class="fas fa-bars"></i>
         </button>
       </nav>
+      <div class="mobile-menu">
+        <button class="btn__menu btn__menu--close" onclick="toggleMenu()">
+          <i class="fas fa-times"></i>
+        </button>
+        <ul class="mobile-menu__links">
+          <li onclick="toggleModal(); toggleMenu();">
+            <a href="#" class="mobile-menu__link">About</a>
+          </li>
+          <li onclick="toggleMenu()">
+            <a href="#projects" class="mobile-menu__link">Projects</a>
+          </li>
+          <li onclick="toggleModal(); toggleMenu();">
+            <a href="#" class="mobile-menu__link">Contact</a>
+          </li>
+          <li onclick="toggleContrast()">
+            <a href="#" class="mobile-menu__link"
+              ><i class="fas fa-adjust"></i
+            ></a>
+          </li>
+        </ul>
+      </div>
       <header class="header">
         <div class="header__content">
           <h1 class="title">Hello</h1>
